@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hapag ni Kuya Kelvin</title>
+  <meta name="description" content="Hapag — the Filipino table. Savory classics and beloved sweets, each kept in two forms: the traditional Noon and the modern Ngayon." />
+  <meta property="og:title" content="Hapag ni Kuya Kelvin" />
+  <meta property="og:description" content="The Filipino table — savory and sweet, noon at ngayon." />
+  <meta property="og:image" content="images/hero.webp" />
+  <meta name="theme-color" content="#4A1D6E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Hapag ni Kuya Kelvin home">
+        <span class="nav__brand-mark" aria-hidden="true">✦</span>
+        <span class="nav__brand-word">Hapag <em class="nav__byline">ni Kuya Kelvin</em></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#story">Story</a>
+        <a href="#collection">Collection</a>
+        <a href="#tradition">Noon at Ngayon</a>
+      </nav>
+
+      <a class="nav__cta" href="#collection">Explore</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="top">
+      <div class="hero__media">
+        <img src="images/hero.webp" alt="A full Filipino spread — savory dishes and sweets together on a warm wooden table" fetchpriority="high" />
+        <div class="hero__scrim" aria-hidden="true"></div>
+      </div>
+      <div class="hero__content">
+        <p class="hero__eyebrow">A Filipino food journal</p>
+        <h1 class="hero__title">The Filipino table,<br /><em>noon at ngayon.</em></h1>
+        <p class="hero__sub">
+          Savory classics and beloved sweets — from adobo and sinigang to leche flan and
+          halo-halo — each kept in two forms: the traditional it grew up as, and the modern
+          it has become.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#collection">Explore the collection</a>
+          <a class="btn btn--ghost" href="#story">Our story</a>
+        </div>
+        <p class="hero__tag">ˈhɑː·pag &nbsp;·&nbsp; <em>noun, Tagalog</em> — the table set for a meal</p>
+      </div>
+    </section>
+
+    <!-- ===== Story ===== -->
+    <section class="story" id="story">
+      <div class="story__inner">
+        <p class="eyebrow">The Story</p>
+        <h2 class="section-title">Where heritage meets the modern table.</h2>
+        <div class="story__grid">
+          <p class="story__lead">
+            Filipino food is a story you can eat — of Spanish galleons and Chinese traders,
+            of grandmothers stirring ube over a low flame and smoke rising from a lechon spit,
+            of fiestas where the table groans with stews, rice, and sugar.
+          </p>
+          <div class="story__body">
+            <p>
+              <strong>Hapag</strong> — the table set for a meal — is a loving study of that
+              story. For every dish we keep two recipes side by side: the
+              <strong>traditional</strong> version our <em>lola</em> would recognize, and the
+              <strong>modern</strong> riff that made it famous again — the adobo fried rice,
+              the minimalist halo-halo, the kare-kare taco.
+            </p>
+            <p>
+              The idea is simple: honor the roots, celebrate the reinvention. Every recipe
+              here is researched from trusted Filipino kitchens, with complete steps you can
+              actually follow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Collection ===== -->
+    <section class="collection" id="collection">
+      <div class="collection__head">
+        <p class="eyebrow">The Collection</p>
+        <h2 class="section-title">The Filipino table, two ways.</h2>
+        <p class="collection__note">
+          Savory and sweet — each in its traditional and modern form. Tap any card for the full recipe.
+        </p>
+      </div>
+      <div class="collection__filters" role="group" aria-label="Filter recipes">
+        <div class="filter-group" data-dim="kind">
+          <span class="filter-group__label">Dish</span>
+          <div class="filter-group__buttons">
+            <button class="filter filter--active" data-filter="all" data-dim="kind" aria-pressed="true">All <span class="filter__count">0</span></button>
+            <button class="filter" data-filter="savory" data-dim="kind" aria-pressed="false">Savory <span class="filter__count">0</span></button>
+            <button class="filter" data-filter="dessert" data-dim="kind" aria-pressed="false">Dessert <span class="filter__count">0</span></button>
+          </div>
+        </div>
+        <div class="filter-group" data-dim="type">
+          <span class="filter-group__label">Noon at Ngayon</span>
+          <div class="filter-group__buttons">
+            <button class="filter filter--active" data-filter="all" data-dim="type" aria-pressed="true">All <span class="filter__count">0</span></button>
+            <button class="filter" data-filter="traditional" data-dim="type" aria-pressed="false">Noon · Traditional <span class="filter__count">0</span></button>
+            <button class="filter" data-filter="modern" data-dim="type" aria-pressed="false">Ngayon · Modern <span class="filter__count">0</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="collection__grid" id="collectionGrid" aria-live="polite">
+        <!-- Cards injected by js/main.js -->
+      </div>
+    </section>
+
+    <!-- ===== Noon at Ngayon ===== -->
+    <section class="tradition" id="tradition">
+      <div class="tradition__inner">
+        <p class="eyebrow eyebrow--light">Noon at Ngayon</p>
+        <h2 class="section-title section-title--light">Two kitchens, one table.</h2>
+        <p class="tradition__intro">
+          <em>Noon</em> means "then." <em>Ngayon</em> means "now." Put them together and you
+          have the great story of Filipino food — every dish has a yesterday and a today, and
+          both deserve a seat at the <em>hapag</em>.
+        </p>
+        <div class="tradition__grid">
+          <article class="tradition__card">
+            <span class="tradition__badge">Noon · Traditional</span>
+            <h3>Lutong-bahay</h3>
+            <p class="tradition__sub">The taste of then</p>
+            <p class="tradition__body">
+              <em>Noon</em> is the kitchen of memory — the recipe your <em>lola</em> knew by
+              heart, learned not from a book but by watching, tasting, and stirring beside
+              someone you love. Adobo simmered low until the meat surrenders. Sinigang
+              sharpened with real tamarind. Kare-kare stirred patient and thick. These are
+              the dishes of home, made the slow, sure way.
+            </p>
+            <p class="tradition__why">
+              <strong>Why it matters:</strong> It keeps more than recipes alive — it carries
+              family stories, seasons, and a sense of belonging forward through food.
+            </p>
+          </article>
+          <article class="tradition__card">
+            <span class="tradition__badge tradition__badge--modern">Ngayon · Modern</span>
+            <h3>The Reinvention</h3>
+            <p class="tradition__sub">Tradition, seen anew</p>
+            <p class="tradition__body">
+              <em>Ngayon</em> takes the flavors we grew up with and gives them new ways to be
+              tasted. Adobo folded into fried rice, kare-kare tucked into a taco, halaya spun
+              into cake — familiar tastes meeting new techniques, new audiences, and ideas
+              from around the world. The form may change, but the roots stay.
+            </p>
+            <p class="tradition__why">
+              <strong>Why it matters:</strong> Reinvention lets a living food culture grow —
+              carrying Filipino flavors to new generations and new tables, another way to
+              celebrate where they began.
+            </p>
+          </article>
+        </div>
+        <p class="tradition__message">
+          The real story is not <em>noon</em> versus <em>ngayon</em>. It is noon becoming the
+          foundation for ngayon — one preserves the memory, the other carries it forward.
+          Both have a place at the hapag.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__mark" aria-hidden="true">✦</span>
+        <span class="footer__word">Hapag ni Kuya Kelvin</span>
+        <p>The Filipino table — savory and sweet, noon at ngayon.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Explore</h4>
+        <a href="#story">Story</a>
+        <a href="#collection">Collection</a>
+        <a href="#tradition">Noon at Ngayon</a>
+      </div>
+      <div class="footer__col">
+        <h4>The Table</h4>
+        <a href="#collection">Savory</a>
+        <a href="#collection">Desserts</a>
+        <a href="#collection">Noon · Traditional</a>
+        <a href="#collection">Ngayon · Modern</a>
+      </div>
+      <div class="footer__col footer__col--meta">
+        <p class="footer__note">
+          Hapag brings recipes and trusted food resources together in one place. Created as a
+          not-for-profit community service, it celebrates the joy of cooking, sharing, and
+          preserving Filipino food traditions.
+        </p>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>© <span id="year"></span> Hapag ni Kuya Kelvin</span>
+      <span>Made with ube &amp; care</span>
+    </div>
+  </footer>
+
+  <!-- ===== Recipe modal ===== -->
+  <div class="modal" id="recipeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="document">
+      <button class="modal__close" data-close aria-label="Close">×</button>
+      <div class="modal__hero">
+        <img id="modalImage" src="" alt="" />
+      </div>
+      <div class="modal__body">
+        <span class="modal__badge" id="modalBadge"></span>
+        <h2 class="modal__title" id="modalTitle"></h2>
+        <p class="modal__region" id="modalRegion"></p>
+        <ul class="modal__meta" id="modalMeta"></ul>
+
+        <div class="modal__section">
+          <h3>Ingredients</h3>
+          <ul class="modal__ingredients" id="modalIngredients"></ul>
+        </div>
+
+        <div class="modal__section">
+          <h3>Method</h3>
+          <ol class="modal__steps" id="modalSteps"></ol>
+        </div>
+
+        <div class="modal__section">
+          <h3>Notes &amp; tips</h3>
+          <p class="modal__notes" id="modalNotes"></p>
+        </div>
+
+        <a class="modal__source" id="modalSource" href="#" target="_blank" rel="noopener noreferrer">
+          View source recipe ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
