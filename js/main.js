@@ -1465,7 +1465,7 @@ const RECIPES = [
     ],
     notes: "The dressed-up version — ube ice cream, leche flan, and cornflakes turn a humble corn dessert into a layered treat.",
     source: "https://theunlikelybaker.com/mais-con-yelo-filipino-sweet-corn-dessert/",
-  },,
+  },
 {
   "id": "adobo-fried-rice",
   "dish": "Adobo",
@@ -3190,7 +3190,17 @@ filterButtons.forEach((b) =>
 // --- Footer year ---
 $("#year").textContent = new Date().getFullYear();
 
+// --- Shuffle collection so savory and dessert mix together ---
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 // --- Init ---
+shuffle(RECIPES);
 renderCards();
 setFilterCounts();
 observeReveals();
