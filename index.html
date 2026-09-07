@@ -104,6 +104,22 @@
         </p>
       </div>
       <div class="collection__filters" role="group" aria-label="Filter recipes">
+        <div class="search" role="search">
+          <svg class="search__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <input
+            type="search"
+            id="recipeSearch"
+            class="search__input"
+            placeholder="Search a dish — adobo, leche flan, sisig…"
+            aria-label="Search recipes"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button class="search__clear" id="searchClear" type="button" aria-label="Clear search" hidden>×</button>
+        </div>
         <div class="filter-group" data-dim="kind">
           <span class="filter-group__label">Dish</span>
           <div class="filter-group__buttons">
@@ -124,6 +140,9 @@
       <div class="collection__grid" id="collectionGrid" aria-live="polite">
         <!-- Cards injected by js/main.js -->
       </div>
+      <p class="collection__empty" id="collectionEmpty" hidden>
+        No recipes match — try another search or clear the filters.
+      </p>
     </section>
 
     <!-- ===== Noon at Ngayon ===== -->

@@ -2988,6 +2988,14 @@ const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 function kindOf(r) { return r.kind || "Dessert"; }
 function kindKey(r) { return kindOf(r).toLowerCase(); }
 
+// --- Searchable text for a recipe (name + dish + category + region + era) ---
+function searchText(r) {
+  return [r.name, r.dish, r.dessert, r.category, r.region, r.type, kindOf(r)]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+}
+
 // --- Render collection cards ---
 function renderCards() {
   const grid = $("#collectionGrid");
@@ -3002,6 +3010,7 @@ function renderCards() {
     card.dataset.id = r.id;
     card.dataset.type = r.type.toLowerCase();
     card.dataset.kind = kindKey(r);
+    card.dataset.search = searchText(r);
 
     const modern = r.type === "Modern" ? " card__badge--modern" : "";
     card.innerHTML = `
@@ -3124,12 +3133,16 @@ const observeReveals = () =>
 const filterButtons = $$(".filter");
 let activeKind = "all";
 let activeType = "all";
+let activeQuery = "";
 
 function applyFilters() {
   const cards = $$(".card");
+  const q = activeQuery.trim().toLowerCase();
   const visible = [];
   cards.forEach((card) => {
+    const matchesQuery = !q || card.dataset.search.includes(q);
     const show =
+      matchesQuery &&
       (activeKind === "all" || card.dataset.kind === activeKind) &&
       (activeType === "all" || card.dataset.type === activeType);
     card.classList.toggle("is-filtered", !show);
@@ -3138,6 +3151,10 @@ function applyFilters() {
       visible.push(card);
     }
   });
+
+  // Empty state
+  const empty = $("#collectionEmpty");
+  if (empty) empty.hidden = visible.length > 0;
 
   // Staggered re-entry animation
   visible.forEach((card, i) => {
@@ -3186,6 +3203,28 @@ filterButtons.forEach((b) =>
     applyFilters();
   })
 );
+
+// --- Search ---
+const searchInput = $("#recipeSearch");
+const searchClear = $("#searchClear");
+
+function syncClearButton() {
+  if (searchClear) searchClear.hidden = searchInput.value === "";
+}
+
+searchInput.addEventListener("input", () => {
+  activeQuery = searchInput.value;
+  syncClearButton();
+  applyFilters();
+});
+
+searchClear.addEventListener("click", () => {
+  searchInput.value = "";
+  activeQuery = "";
+  syncClearButton();
+  applyFilters();
+  searchInput.focus();
+});
 
 // --- Footer year ---
 $("#year").textContent = new Date().getFullYear();
