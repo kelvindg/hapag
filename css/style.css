@@ -30,6 +30,11 @@
   --shadow-card: 0 12px 30px -18px rgba(42, 26, 51, 0.28);
 
   --maxw: 1180px;
+
+  /* Hero: on tall displays the headline is anchored this far below the
+     viewport top so it stays close to the nav (bottom-anchored 92vh content
+     left ~650px of dead air at 1440p and ~1330px at 4K). */
+  --hero-top-offset: clamp(140px, 14vh, 250px);
 }
 
 /* --- Reset --- */
@@ -619,6 +624,18 @@ button { font-family: inherit; cursor: pointer; }
 /* ==========================================================================
    Responsive
    ========================================================================== */
+/* Tall viewports (1080p+ / 1440p / 4K): anchor the hero headline just below
+   the nav instead of pinning it to the bottom. The hero stays full-height so
+   the full spread photo is preserved — only the text block moves up. */
+@media (min-height: 900px) and (min-width: 760px) {
+  .hero { align-items: flex-start; }
+  .hero__content { padding-top: var(--hero-top-offset); padding-bottom: 64px; }
+  .hero__scrim {
+    background:
+      linear-gradient(180deg, rgba(42, 26, 51, 0.80) 0%, rgba(42, 26, 51, 0.56) 32%, rgba(42, 26, 51, 0.34) 70%, rgba(42, 26, 51, 0.58) 100%);
+  }
+}
+
 @media (max-width: 900px) {
   .collection__grid { grid-template-columns: repeat(2, 1fr); }
   .story__grid { grid-template-columns: 1fr; gap: 24px; }
